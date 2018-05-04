@@ -35,6 +35,7 @@ class DB
         $host = $this->config['host'];
         $db = $this->config['db'];
         $connection = new PDO("mysql:dbname=$db;host=$host", $username, $password);
+        $connection->exec("set names utf8");
         return $connection;
     }
 
